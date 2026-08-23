@@ -1,0 +1,180 @@
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+/*メニューを右端横並び*/
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+nav {
+    display: flex;
+    gap: 24px;
+}
+
+nav a {
+    color: #6b4423;
+    text-decoration: none;
+    transition: opacity 0.3s;
+}
+
+nav a:hover {
+    opacity: 0.6;
+}
+
+.hero {
+    min-height: 450px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    background-image:
+    linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.35)),
+    url("images/main.png");
+    background-size: cover;
+    background-position: center;
+
+    text-align: center;
+    color: white;
+}
+
+.menu {
+    padding: 60px 40px;
+    text-align: center;
+}
+
+.bread-list {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.bread-card {
+    width: 250px;
+    padding: 24px;
+    background-color: white;
+    border-radius: 12px;
+    transition: transform 0.3s;
+}
+
+.bread-card:hover {
+    transform: translateY(-5px);
+}
+
+.bread-image {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.bread-card h3 {
+    color: #6b4423;
+}
+
+.bread-card span {
+    font-weight: bold;
+}
+
+.about {
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 80px 20px;
+    text-align: center;
+    line-height: 1.8;
+}
+
+.about h2 {
+    color: #6b4423;
+}
+
+.access {
+    padding: 60px 20px;
+    text-align: center;
+    background-color: #f5eadc;
+}
+
+.access h2 {
+    color: #6b4423;
+}
+
+.access-info {
+    margin-top: 30px;
+    line-height: 1.8;
+}
+
+footer {
+    padding: 20px;
+    text-align: center;
+    font-size: 14px;
+}
+
+.page-top {
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+
+    width: 60px;
+    height: 60px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background-color: #6b4423;
+    color: white;
+
+    text-decoration: none;
+    border-radius: 50%;
+
+    font-size: 14px;
+    font-weight: bold;
+
+    transition: opacity 0.3s;
+}
+
+.page-top:hover {
+    opacity: 0.7;
+}
+
+/*レスポンシブ対応*/
+@media (max-width: 768px) {
+
+    header {
+        flex-direction: column;
+        gap: 15px;
+        padding: 20px;
+    }
+
+    nav {
+        gap: 12px;
+    }
+
+    .hero {
+        padding: 60px 20px;
+    }
+
+    .menu {
+        padding: 40px 20px;
+    }
+
+    .bread-list {
+        flex-direction: column;
+        align-items: center;
+    }
+}
