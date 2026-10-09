@@ -1,23 +1,25 @@
 <!DOCTYPE html>
 <html lang="ja">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>こむぎ日和</title>
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body id="top">
 
     <header>
         <div class="logo">こむぎ日和</div>
-    
+
         <nav>
             <a href="#menu">パン</a>
             <a href="#about">お店について</a>
             <a href="#access">アクセス</a>
         </nav>
     </header>
-    
+
     <main>
         <section class="hero">
             <h1>毎日の食卓に、小さな焼きたてを。</h1>
@@ -26,30 +28,30 @@
 
         <section id="menu" class="menu">
             <h2>おすすめのパン</h2>
-        
+
             <div class="bread-list">
                 <article class="bread-card">
-                    <img class="bread-image" src="images/croissant.png"
-     alt="発酵バタークロワッサン">
+                    <img class="bread-image" src="images/croissant.png" alt="発酵バタークロワッサン">
                     <h3>発酵バタークロワッサン</h3>
                     <p>外はさっくり、中はふんわり。</p>
                     <span>280円</span>
+                    <button type="button" class="favorite-btn" data-bread="croissant" aria-pressed="false">♡ お気に入り</button>
                 </article>
-        
+
                 <article class="bread-card">
-                    <img class="bread-image" src="images/baguette.png"
-     alt="朝焼きバゲット">
+                    <img class="bread-image" src="images/baguette.png" alt="朝焼きバゲット">
                     <h3>朝焼きバゲット</h3>
                     <p>小麦の香りを楽しむシンプルな一本。</p>
                     <span>320円</span>
+                    <button type="button" class="favorite-btn" data-bread="baguette" aria-pressed="false">♡ お気に入り</button>
                 </article>
-        
+
                 <article class="bread-card">
-                    <img class="bread-image" src="images/shokupan.png"
-     alt="こむぎ日和の食パン">
+                    <img class="bread-image" src="images/shokupan.png" alt="こむぎ日和の食パン">
                     <h3>こむぎ日和の食パン</h3>
                     <p>毎朝食べたくなる、やさしい甘み。</p>
                     <span>420円</span>
+                    <button type="button" class="favorite-btn" data-bread="shokupan" aria-pressed="false">♡ お気に入り</button>
                 </article>
             </div>
         </section>
@@ -64,7 +66,7 @@
 
         <section id="access" class="access">
             <h2>アクセス</h2>
-        
+
             <div class="access-info">
                 <p>〒000-0000 福井県〇〇市〇〇町1-2-3</p>
                 <p>営業時間：8:00〜18:00</p>
@@ -79,5 +81,8 @@
     </footer>
 
     <a href="#top" class="page-top">↑ TOP</a>
+
+    <script src="script.js"></script>
 </body>
+
 </html>

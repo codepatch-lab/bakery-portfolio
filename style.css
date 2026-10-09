@@ -60,6 +60,7 @@ nav a:hover {
 .bread-list {
     display: flex;
     justify-content: center;
+    align-items: stretch;
     gap: 30px;
     margin-top: 40px;
 }
@@ -70,10 +71,17 @@ nav a:hover {
     background-color: white;
     border-radius: 12px;
     transition: transform 0.3s;
+    display: flex;
+    flex-direction: column;
+    /* height: 100%; */
 }
 
 .bread-card:hover {
     transform: translateY(-5px);
+}
+
+.bread-card p {
+    flex-grow: 1;
 }
 
 .bread-image {
@@ -177,4 +185,26 @@ footer {
         flex-direction: column;
         align-items: center;
     }
+}
+
+/* ハートボタンのデザイン */
+.favorite-btn {
+    margin-top: 12px;
+    padding: 8px 14px;
+    border: 1px solid #d88c8c;
+    border-radius: 20px;
+    background-color: white;
+    color: #c76b6b;
+    font-size: 14px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.favorite-btn:hover {
+    background-color: #fff0f0;
+}
+
+.favorite-btn[aria-pressed="true"] {
+    background-color: #c76b6b;
+    color: white;
 }
