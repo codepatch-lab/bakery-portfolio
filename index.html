@@ -27,33 +27,29 @@
         </section>
 
         <section id="menu" class="menu">
-            <h2>おすすめのパン</h2>
+            <h2>こむぎ日和のパン</h2>
 
-            <div class="bread-list">
-                <article class="bread-card">
-                    <img class="bread-image" src="images/croissant.png" alt="発酵バタークロワッサン">
-                    <h3>発酵バタークロワッサン</h3>
-                    <p>外はさっくり、中はふんわり。</p>
-                    <span>280円</span>
-                    <button type="button" class="favorite-btn" data-bread="croissant" aria-pressed="false">♡ お気に入り</button>
-                </article>
+            <div class="bread-slider">
 
-                <article class="bread-card">
-                    <img class="bread-image" src="images/baguette.png" alt="朝焼きバゲット">
-                    <h3>朝焼きバゲット</h3>
-                    <p>小麦の香りを楽しむシンプルな一本。</p>
-                    <span>320円</span>
-                    <button type="button" class="favorite-btn" data-bread="baguette" aria-pressed="false">♡ お気に入り</button>
-                </article>
+                <button type="button" class="slider-prev" aria-label="前のパンを見る">❮</button>
 
-                <article class="bread-card">
-                    <img class="bread-image" src="images/shokupan.png" alt="こむぎ日和の食パン">
-                    <h3>こむぎ日和の食パン</h3>
-                    <p>毎朝食べたくなる、やさしい甘み。</p>
-                    <span>420円</span>
-                    <button type="button" class="favorite-btn" data-bread="shokupan" aria-pressed="false">♡ お気に入り</button>
-                </article>
+                <div class="bread-list">
+                </div>
+
+                <button type="button" class="slider-next" aria-label="次のパンを見る">❯</button>
             </div>
+        </section>
+
+        <section id="shopping-list">
+            <h2>買いたいパンリスト</h2>
+            <p>お店に行く前に、気になるパンを選んでね。</p>
+
+            <ul id="selected-breads"></ul>
+            <p id="total-price">合計：0円</p>
+
+            <button type="button" id="clear-list">
+                リストを空にする
+            </button>
         </section>
 
         <section id="about" class="about">
