@@ -8,6 +8,10 @@ HTML・CSS・JavaScriptを使用し、店舗紹介だけでなく、商品を選
 
 https://codepatch-lab.github.io/bakery-portfolio/
 
+## スクリーンショット
+
+![こむぎ日和のサイト画面](images/screenshot.png)
+
 ## 使用技術
 
 - HTML
