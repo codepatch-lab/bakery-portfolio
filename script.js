@@ -67,6 +67,14 @@ breads.forEach(function (bread) {
 
 const favoriteBtns = document.querySelectorAll(".favorite-btn");
 
+function updateFavoriteButton(btn, isSelected) {
+    btn.textContent = isSelected
+        ? "✓ リストに追加済み"
+        : "＋ 買いたいリストに追加";
+
+    btn.setAttribute("aria-pressed", String(isSelected));
+}
+
 // 買いたいリストボタン処理
 favoriteBtns.forEach(function (btn) {
 
@@ -74,8 +82,7 @@ favoriteBtns.forEach(function (btn) {
     const savedFavorite = localStorage.getItem(btn.dataset.bread);
 
     if (savedFavorite === "true") {
-        btn.textContent = "✓ リストに追加済み";
-        btn.setAttribute("aria-pressed", "true");
+        updateFavoriteButton(btn, true);
     }
 
     // クリックされたときの処理
@@ -83,12 +90,10 @@ favoriteBtns.forEach(function (btn) {
         const isFavorite = btn.getAttribute("aria-pressed") === "true";
 
         if (isFavorite) {
-            btn.textContent = "＋ 買いたいリストに追加";
-            btn.setAttribute("aria-pressed", "false");
+            updateFavoriteButton(btn, false);
             localStorage.removeItem(btn.dataset.bread);
         } else {
-            btn.textContent = "✓ リストに追加済み";
-            btn.setAttribute("aria-pressed", "true");
+            updateFavoriteButton(btn, true);
             localStorage.setItem(btn.dataset.bread, "true");
         }
 
@@ -107,6 +112,8 @@ function findBread(breadId) {
     });
 }
 
+
+// 買いたいリストの表示と合計金額を更新する
 function updateShoppingList() {
     selectedBreads.innerHTML = "";
 
@@ -120,11 +127,10 @@ function updateShoppingList() {
             const bread = findBread(breadId);
 
             const li = document.createElement("li");
-            // li.textContent = `${bread.name}　${bread.price.toLocaleString("ja-JP")}円`;
             li.innerHTML = `
                 <span>${bread.name}</span>
                 <span>${bread.price.toLocaleString("ja-JP")}円</span>
-                <button type="button" class="remove-btn"aria-label="${bread.name}をリストから削除">
+                <button type="button" class="remove-btn" aria-label="${bread.name}をリストから削除">
                     ×
                 </button>
             `;
@@ -138,8 +144,7 @@ function updateShoppingList() {
             removeBtn.addEventListener("click", function () {
 
                 // 商品カードのボタンを元に戻す
-                btn.textContent = "＋ 買いたいリストに追加";
-                btn.setAttribute("aria-pressed", "false");
+                updateFavoriteButton(btn, false);
 
                 // 保存していたデータを削除
                 localStorage.removeItem(breadId);
@@ -147,7 +152,6 @@ function updateShoppingList() {
                 // 買いたいリストを再表示
                 updateShoppingList();
             });
-
             total += bread.price;
         }
     });
@@ -158,12 +162,13 @@ function updateShoppingList() {
 
 updateShoppingList();
 
+//リストを空にするボタンクリック処理
 const clearListBtn = document.querySelector("#clear-list");
 
 clearListBtn.addEventListener("click", function () {
     favoriteBtns.forEach(function (btn) {
-        btn.textContent = "＋ 買いたいリストに追加";
-        btn.setAttribute("aria-pressed", "false");
+
+        updateFavoriteButton(btn, false);
 
         localStorage.removeItem(btn.dataset.bread);
     });
@@ -198,6 +203,7 @@ prevBtn.addEventListener("click", function () {
 });
 
 
+// カルーセルの位置に応じて左右の矢印の有効・無効を切り替える
 function updateSliderButtons() {
     const maxScroll = breadList.scrollWidth - breadList.clientWidth;
 
